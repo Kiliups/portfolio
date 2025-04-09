@@ -1,14 +1,13 @@
 <script>
+	import { getLocale } from '$lib/paraglide/runtime';
 	import { onMount } from 'svelte';
 
-	let arr = [
-		'Computer Science Student',
-		'Backend Engineer',
-		'Frontend Engineer',
-		'Fullstack Developer',
-		'Software Developer!'
-	];
+	let arr =
+		getLocale() === 'en'
+			? ['computer science student', 'fullstack developer', 'software developer!']
+			: ['Informatikstudent', 'Fullstackentwickler', 'Softwareentwickler!'];
 	let displayText = $state('');
+
 	let index = 0;
 	let arrIndex = 0;
 	let isDeleting = false;
@@ -47,7 +46,6 @@
 		}
 	}
 
-	// Starte den Effekt, sobald die Komponente geladen wird
 	onMount(() => {
 		typeWriter();
 	});
