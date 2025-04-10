@@ -10,7 +10,7 @@
 
 	let activeSection = $state('about');
 
-	let sections: Array<keyof typeof m> = ['about', 'experience', 'projects'];
+	let sections: Array<keyof typeof m> = ['about', 'experience'];
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
@@ -100,7 +100,7 @@
 			</li>
 		</ul>
 	</header>
-	<main class="flex flex-col gap-8 lg:w-[55%] lg:gap-24">
+	<main class="flex flex-col gap-8 lg:mb-24 lg:w-[55%] lg:gap-24">
 		<h2 class="pt-16 text-xl font-bold lg:hidden">{m.about()}</h2>
 		<section id="about" class="flex flex-col gap-4 lg:px-4 lg:pt-24">
 			<p>{m.about_section_1()}</p>
@@ -157,6 +157,6 @@
 				]}
 			/>
 		</section>
-		<h2 class="text-xl font-bold lg:hidden">{m.projects()}</h2>
+		<!--<h2 class="text-xl font-bold lg:hidden">{m.projects()}</h2>-->
 	</main>
 </div>
