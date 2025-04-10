@@ -4,7 +4,7 @@
 
 	let arr =
 		getLocale() === 'en'
-			? ['computer science student', 'fullstack developer', 'software developer!']
+			? ['Computer Science Student', 'Fullstack Developer', 'Software Developer!']
 			: ['Informatikstudent', 'Fullstackentwickler', 'Softwareentwickler!'];
 	let displayText = $state('');
 
