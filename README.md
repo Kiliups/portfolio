@@ -1,38 +1,26 @@
-# sv
+# Kilian Mayer – Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A minimal, responsive developer portfolio built with SvelteKit. It showcases my experience, background, and links to external profiles. Inspired by [@Brittany Chiang](https://brittanychiang.com/).
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Smooth section scrolling with active section highlighting
+- Multilingual support using Paraglide
+- Styled with Tailwind CSS and shadcn/ui
+- Available in light and dark mode
+- Social links and contact info
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Setup
 
 ```bash
+git clone https://github.com/Kiliups/portfolio.git
+cd portfolio
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Contact
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- GitHub: [@Kiliups](https://github.com/Kiliups)
+- LinkedIn: [Kilian Mayer](https://www.linkedin.com/in/kilian-johannes-mayer)
+- Email: [mayer-kilian@gmx.de](mailto:mayer-kilian@gmx.de)

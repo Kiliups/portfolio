@@ -26,7 +26,7 @@
 			<h3>{title}</h3>
 			{#if link}
 				<ChevronsUp
-					class="rotate-45 text-sky-600 opacity-0 transition-opacity group-hover:opacity-100 dark:text-sky-300"
+					class="rotate-45 text-indigo-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-indigo-300"
 				/>
 			{/if}
 		</div>
@@ -36,7 +36,7 @@
 			<div class="flex flex-row flex-wrap gap-2">
 				{#each badges as badge}
 					<Badge
-						class="border-transparent bg-indigo-300/75 text-indigo-900/80 hover:bg-indigo-300/75"
+						class="border-transparent bg-indigo-300/75 font-semibold text-indigo-950 hover:bg-indigo-300/75"
 					>
 						<p>{badge}</p>
 					</Badge>

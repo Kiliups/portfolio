@@ -2,13 +2,12 @@
 	import ExperienceCard from '$lib/components/experience_card.svelte';
 	import Typewriter from '$lib/components/typewriter.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import me from '$lib/images/me.jpg';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale } from '$lib/paraglide/runtime';
 	import { Mail, ScrollText } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 
-	let activeSection = $state('about');
+	let activeSection = $state('');
 
 	let sections: Array<keyof typeof m> = ['about', 'experience'];
 
@@ -30,6 +29,8 @@
 			if (section) observer.observe(section);
 		});
 	});
+
+	let footnoteLinkStyle = 'font-semibold text-foreground/75 hover:text-foreground/100';
 </script>
 
 <div class="lg:flex lg:justify-between lg:gap-4">
@@ -42,7 +43,7 @@
 					class="absolute inset-0 translate-x-4 translate-y-4 transform bg-primary/20 backdrop-blur-md"
 				></div>
 				<div class="relative z-10 shadow-xl">
-					<img src={me} alt="Kilian Mayer" />
+					<img src="/me-wide.png" alt="Kilian Mayer" />
 				</div>
 			</div>
 			<h1 class="text-5xl font-bold">Kilian Mayer</h1>
@@ -55,6 +56,12 @@
 							<li>
 								<a
 									href={'#' + section}
+									onclick={(e) => {
+										e.preventDefault();
+										document.getElementById(section)?.scrollIntoView({
+											behavior: 'smooth'
+										});
+									}}
 									class={`inline-block origin-left transform transition-transform hover:scale-125 hover:opacity-100 ${
 										activeSection === section ? 'scale-125 opacity-100' : 'opacity-50'
 									}`}
@@ -94,9 +101,11 @@
 				</a>
 			</li>
 			<li>
-				<Button variant="outline" size="icon" title="curriculum vitae">
-					<ScrollText class="size-5" />
-				</Button>
+				<a href="/CV.pdf" target="_blank" rel="noopener noreferrer">
+					<Button variant="outline" size="icon" title="curriculum vitae">
+						<ScrollText class="size-5" />
+					</Button>
+				</a>
 			</li>
 		</ul>
 	</header>
@@ -158,5 +167,12 @@
 			/>
 		</section>
 		<!--<h2 class="text-xl font-bold lg:hidden">{m.projects()}</h2>-->
+		<p class="text-sm text-foreground/50">
+			Built with
+			<a href="https://svelte.dev" class={footnoteLinkStyle}>Svelte</a>,
+			<a href="https://tailwindcss.com" class={footnoteLinkStyle}>Tailwind CSS</a>
+			and
+			<a href="https://ui.shadcn.com/" class={footnoteLinkStyle}>Shadcn</a>.
+		</p>
 	</main>
 </div>
