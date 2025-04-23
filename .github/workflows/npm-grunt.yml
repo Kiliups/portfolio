@@ -1,0 +1,22 @@
+name: deploy using docker compose
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - name: build docker compose
+      run: docker compose build
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name: deploy docker compose
+      run: docker compose up -d
+  cleanup:
+    runs-on: self-hosted
+    steps:
+    - name: cleanup unused docker images
+      run: docker image prune
