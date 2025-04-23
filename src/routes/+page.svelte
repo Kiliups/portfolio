@@ -166,7 +166,6 @@
 				]}
 			/>
 		</section>
-		<!--<h2 class="text-xl font-bold lg:hidden">{m.projects()}</h2>-->
 		<p class="text-sm text-foreground/50">
 			Built with
 			<a href="https://svelte.dev" class={footnoteLinkStyle}>Svelte</a>,
