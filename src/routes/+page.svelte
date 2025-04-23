@@ -35,7 +35,7 @@
 
 <div class="lg:flex lg:justify-between lg:gap-4">
 	<header
-		class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24"
+		class="flex flex-col gap-4 lg:sticky lg:top-0 lg:h-screen lg:w-[45%] lg:justify-between lg:py-24"
 	>
 		<div class="flex flex-col gap-4">
 			<div class="relative mb-6 inline-block w-44">
@@ -74,7 +74,7 @@
 				</ul>
 			</nav>
 		</div>
-		<ul class="mt-4 flex flex-row gap-4 opacity-75 lg:mt-0">
+		<ul class="flex flex-row gap-4 opacity-75">
 			<li>
 				<a href="https://github.com/Kiliups" target="_blank" rel="noreferrer noopener">
 					<Button variant="outline" size="icon" class="text-2xl" title="github">
