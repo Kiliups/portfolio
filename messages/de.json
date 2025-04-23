@@ -13,6 +13,5 @@
 	"bachelor_thesis": "Bachelorarbeit",
 	"bachelor_thesis_despriction": "Entwickelung und Validierung von Zero-/Few-Shot-Ansätzen mit Llama 3.3 unter Verwendung von Textsegmentierungsstrategien, zur automatisierten Identifikation von Softwareanforderungen in Dokumentationen. Dabei wurden vielversprechende Ergebnisse erzielt, die die traditionelle Anforderungsanalyse unterstützen könnten.",
 	"student_software_developer": "Werkstudent Softwareentwicklung",
-	"student_software_developer_description": "Migration von C-Code nach Java, Frontendentwicklung mit React und Next.js, Backendentwicklung mit Java Spring Boot, Gestaltung von Datenbankschemata, Implementierung von Unit- und Integrationstests, CI/CD-Pipeline-Management, agile Softwareentwicklung mit Scrum.",
-	"hello_world": "Hello, {name} from de!"
+	"student_software_developer_description": "Migration von C-Code nach Java, Frontendentwicklung mit React und Next.js, Backendentwicklung mit Java Spring Boot, Gestaltung von Datenbankschemata, Implementierung von Unit- und Integrationstests, CI/CD-Pipeline-Management, agile Softwareentwicklung mit Scrum."
 }
