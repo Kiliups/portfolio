@@ -1,22 +1,28 @@
-name: deploy using Docker Compose
+name: deploy using docker compose
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
   deploy:
     runs-on: self-hosted
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    
-    - name: build docker compose
-      run: docker compose build
+      - name: checkout repository
+        uses: actions/checkout@v4
 
-    - name: deploy docker compose
-      run: docker compose up -f /home/kiliups/docker/portfolio/compose.yaml -d
+      - shell: bash
+        env:
+          DOCKER_COMPOSE: ${{ secrets.DOCKER_COMPOSE }}
+        run: |
+          echo "$DOCKER_COMPOSE" > compose.yml
 
-    - name: cleanup unused docker images
-      run: docker image prune
+      - name: build docker compose
+        run: docker compose build
+
+      - name: deploy docker compose
+        run: docker compose up -d
+
+      - name: cleanup unused docker images
+        run: docker image prune
