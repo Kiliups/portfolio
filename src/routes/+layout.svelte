@@ -12,6 +12,10 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 	/>
 	<link rel="icon" href="/favicon.ico" />
+	<meta
+		name="description"
+		content="Kilian Mayer – Computer science student at OTH Regensburg with hands-on experience in software development, fullstack developer and passionate about innovative tech solutions."
+	/>
 </svelte:head>
 
 <main
