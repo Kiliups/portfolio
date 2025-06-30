@@ -101,7 +101,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="/CV.pdf" target="_blank" rel="noopener noreferrer">
+				<a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
 					<Button variant="outline" size="icon" title="curriculum vitae">
 						<ScrollText class="size-5" />
 					</Button>
