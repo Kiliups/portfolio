@@ -146,7 +146,7 @@
 			/>
 			<ExperienceCard
 				title={m.bachelor_degree()}
-				date="OCT 2021 — JUL 2025"
+				date="OCT 2021 — SEPT 2025"
 				company="OTH Regensburg"
 				link="https://www.oth-regensburg.de/studiengang/informatik-studieren-bachelor"
 				badges={[

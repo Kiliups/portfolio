@@ -15,13 +15,13 @@
 </script>
 
 <Card
-	class={`group flex ${link && 'cursor-pointer'} flex-row items-baseline gap-8 border-none bg-transparent shadow-none lg:p-4 lg:hover:bg-slate-300/75 lg:hover:shadow-md lg:hover:dark:bg-slate-800/75 ${className}`}
+	class={`group grid grid-cols-3 ${link && 'cursor-pointer'} items-baseline gap-4 border-none bg-transparent shadow-none lg:gap-8 lg:p-4 lg:hover:bg-slate-300/75 lg:hover:shadow-md lg:hover:dark:bg-slate-800/75 ${className}`}
 	onclick={() => (link ? window.open(link, '_blank') : null)}
 >
 	<header>
-		<p class="whitespace-nowrap text-sm opacity-50">{date}</p>
+		<p class="text-sm opacity-50">{date}</p>
 	</header>
-	<div class="flex flex-col gap-1">
+	<div class="col-span-2 flex flex-col gap-1">
 		<div class="flex flex-row items-center gap-2 font-bold">
 			<h3>{title}</h3>
 			{#if link}
