@@ -15,8 +15,8 @@ A minimal, responsive developer portfolio built with SvelteKit. It showcases my 
 ```bash
 git clone https://github.com/Kiliups/portfolio.git
 cd portfolio
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 ## Contact
