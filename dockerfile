@@ -8,6 +8,7 @@ COPY . .
 
 # Run your build process
 RUN bun i
+RUN bun run prepare
 RUN bun run build
 
 # Step 2: Create a smaller image for running the application
