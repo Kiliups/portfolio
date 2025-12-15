@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@inlang/paraglide-js": "^2.7.0",
 		"@lucide/svelte": "^0.487.0",
+		"mdsvex": "^0.12.6",
 		"mode-watcher": "^0.5.1"
 	}
 }
