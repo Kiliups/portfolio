@@ -4,14 +4,14 @@
 	"about": "About",
 	"experience": "Experience ",
 	"projects": "Projects",
-	"short_discription": "Aspiring computer science student at OTH Regensburg, with hands-on experience in software development and a passion for cutting-edge technology.",
-	"about_section_1": "Hi, I’m Kilian — computer science student at OTH Regensburg with a solide foundation in programming languages such as C, Java, Kotlin, Dart, Python, JavaScript, HTML, and CSS.",
-	"about_section_2": "I’ve got experience in both frontend and backend development with frameworks and tools such as React, Next.js, Svelte, Tailwindcss, Flutter, and Spring Boot. I also have experience working with databases including PostgreSQL, Oracle, and Exasol.",
-	"about_section_3": "Recently, I worked at itestra GmbH as a student software developer, where I contributed to a large-scale insurance project. My work included migrating legacy C code to Java, building UIs with React and Next.js, and developing backend services using Spring Boot. I was also involved in designing database schemas, writing unit and integration tests, and working with CI/CD pipelines to ensure smooth and reliable deployments.",
-	"about_section_4": "Outside of work, I love tinkering with personal projects, like running my own home server with Docker, to deepen my knowledge of system configuration and deployment. When I’m not coding, you’ll probably find me at concerts, on the football field, or enjoying winter sports.",
+	"short_discription": "Computer science M.Sc. at HAW Hamburg, with hands-on experience in software development and a passion for cutting-edge technology.",
+	"about_section_1": "Hi, I’m Kilian — computer science student at HAW Hamburg with a solide foundation in programming languages such as C, Rust, Java, Kotlin, Dart, Python, JavaScript, HTML, and CSS.",
+	"about_section_2": "I’ve got experience in both frontend and backend development with frameworks and tools such as React, Next.js, Svelte, Tailwindcss, Flutter, and Spring Boot. I also have experience working with several sql databases.",
+	"about_section_3": "Recently, I worked at itestra GmbH as a student software developer, where I contributed to a large-scale insurance project. My work included migrating legacy C code to Java, building UIs with React and developing backend services using Spring Boot. I was also involved in designing database schemas, writing unit and integration tests, and working with CI/CD pipelines to ensure smooth and reliable deployments. At university, I am currently specializing in machine learning and robotics.",
+	"about_section_4": "Outside of work and university, I love tinkering with personal projects, like running my own home server, my Nixos configuration and several unfinished projects. Projects which i \"finished\" are available on my GitHub. When I’m not coding, you’ll probably find me at concerts, on the football field, or enjoying winter sports.",
 	"bachelor_degree": "Bachelor Degree in Computer Science",
 	"bachelor_thesis": "Bachelor Thesis",
-	"bachelor_thesis_despriction": "Developed and tested zero-/few-shot approaches with text chunking using Llama 3.3 to automatically extract software requirements from documentation, achieving promising results that could support traditional requirements analysis",
+	"bachelor_thesis_despriction": "Developed and tested zero-/few-shot approaches using Llama 3.3 to automatically extract software requirements from documentation, achieving promising results that can support traditional requirements analysis",
 	"student_software_developer": "Student Software Developer",
-	"student_software_developer_description": "Migrated legacy C code to Java, built user interfaces with React and Next.js, developed backend services with Spring Boot, and helped design database schemas while ensuring quality through testing and CI/CD, agile software development, UI/UX consulting and design"
+	"student_software_developer_description": "Migrated legacy C code to Java, built user interfaces with React and Next.js, developed backend services with Spring Boot, and helped design database schemas while ensuring quality through testing and CI/CD, agile software development, UI/UX consulting and design, customer communication"
 }

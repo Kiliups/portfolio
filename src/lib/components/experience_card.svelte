@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { ChevronsUp } from '@lucide/svelte';
-	import { Badge } from './ui/badge';
-	import { Card } from './ui/card';
 
 	let {
 		title,
@@ -14,9 +12,11 @@
 	} = $props();
 </script>
 
-<Card
-	class={`group grid grid-cols-3 ${link && 'cursor-pointer'} items-baseline gap-4 border-none bg-transparent shadow-none lg:gap-8 lg:p-4 lg:hover:bg-slate-300/75 lg:hover:shadow-md lg:hover:dark:bg-slate-800/75 ${className}`}
-	onclick={() => (link ? window.open(link, '_blank') : null)}
+<a
+	class={`group grid grid-cols-3 ${link && 'cursor-pointer'} lg:hover:bg-base02/50 items-baseline gap-4 rounded border-none bg-transparent shadow-none lg:gap-8 lg:p-4 lg:hover:shadow-sm  ${className}`}
+	href={link}
+	target="_blank"
+	rel="noopener noreferrer"
 >
 	<header>
 		<p class="text-sm opacity-50">{date}</p>
@@ -26,7 +26,7 @@
 			<h3>{title}</h3>
 			{#if link}
 				<ChevronsUp
-					class="rotate-45 text-indigo-400 opacity-0 transition-opacity group-hover:opacity-100 dark:text-indigo-300"
+					class="text-base07 rotate-45 opacity-0 transition-opacity group-hover:opacity-100"
 				/>
 			{/if}
 		</div>
@@ -35,13 +35,13 @@
 		{#if badges.length > 0}
 			<div class="flex flex-row flex-wrap gap-2">
 				{#each badges as badge}
-					<Badge
-						class="border-transparent bg-indigo-300/75 font-semibold text-indigo-950 hover:bg-indigo-300/75"
+					<div
+						class="bg-base07/75 dark:bg-base07 text-base00 rounded-xs px-2 py-1 text-xs font-semibold"
 					>
 						<p>{badge}</p>
-					</Badge>
+					</div>
 				{/each}
 			</div>
 		{/if}
 	</div>
-</Card>
+</a>

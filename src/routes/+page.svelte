@@ -17,11 +17,12 @@
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						activeSection = entry.target.id;
-						console.log('Active section:', activeSection);
 					}
 				});
 			},
-			{ threshold: 0.75 }
+			{
+				threshold: 0.7
+			}
 		);
 
 		sections.forEach((id) => {
@@ -40,7 +41,7 @@
 		<div class="flex flex-col gap-4">
 			<div class="relative mb-6 inline-block w-44">
 				<div
-					class="absolute inset-0 translate-x-4 translate-y-4 transform bg-primary/20 backdrop-blur-md"
+					class="bg-base02 absolute inset-0 translate-x-4 translate-y-4 transform backdrop-blur-md"
 				></div>
 				<div class="relative z-10 shadow-xl">
 					<img src="/me-wide.png" alt="Kilian Mayer" />
@@ -166,7 +167,7 @@
 				]}
 			/>
 		</section>
-		<p class="text-sm text-foreground/50">
+		<p class="text-foreground/50 text-sm">
 			Built with
 			<a href="https://svelte.dev" class={footnoteLinkStyle}>Svelte</a>,
 			<a href="https://tailwindcss.com" class={footnoteLinkStyle}>Tailwind CSS</a>

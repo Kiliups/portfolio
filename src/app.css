@@ -1,58 +1,105 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base {
-  :root {
-    --background: 210 40% 96%;
-    --foreground: 222 47% 11%;
-    --card: 210 40% 96%;
-    --card-foreground: 222 47% 11%;
-    --popover: 210 40% 96%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 217 33% 17%;
-    --primary-foreground: 214 32% 91%;
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 217 33% 17%;
-    --muted: 214 32% 91%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 214 32% 91%;
-    --accent-foreground: 217 33% 17%;
-    --destructive: 0 72.22% 50.59%;
-    --destructive-foreground: 214 32% 91%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222 47% 11%;
-    --radius: 0.75rem;
-  }
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 214 32% 91%;
-    --card: 222 47% 11%;
-    --card-foreground: 214 32% 91%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 214 32% 91%;
-    --primary: 214 32% 91%;
-    --primary-foreground: 217 33% 17%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 214 32% 91%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 214 32% 91%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 214 32% 91%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+:root {
+	--base00: #eff1f5; /* base */
+	--base01: #e6e9ef; /* mantle*/
+	--base02: #ccd0da; /* surface0*/
+	--base03: #bcc0cc; /* surface1*/
+	--base04: #acb0be; /* surface2*/
+	--base05: #4c4f69; /* text */
+	--base06: #dc8a78; /* rosewater */
+	--base07: #7287fd; /* lavender*/
+	--base08: #d20f39; /* red */
+	--base09: #fe640b; /* peach*/
+	--base0A: #df8e1d; /* yellow */
+	--base0B: #40a02b; /* green */
+	--base0C: #179299; /* teal */
+	--base0D: #1e66f5; /* blue */
+	--base0E: #8839ef; /* mauve */
+	--base0F: #dd7878; /* flamingo */
+	--base10: #e6e9ef; /* mantle - darker background */
+	--base11: #dce0e8; /* crust - darkest background */
+	--base12: #e64553; /* maroon - bright red */
+	--base13: #dc8a78; /* rosewater - bright yellow */
+	--base14: #40a02b; /* green - bright green */
+	--base15: #04a5e5; /* sky - bright cyan */
+	--base16: #209fb5; /* sapphire - bright blue */
+	--base17: #ea76cb; /* pink - bright purple */
+
+	--background: var(--base00);
+	--foreground: var(--base05);
+	--radius: 0.75rem;
+}
+.dark {
+	--base00: #24273a; /*base*/
+	--base01: #1e2030; /*mantle*/
+	--base02: #363a4f; /*surface0*/
+	--base03: #494d64; /*surface1*/
+	--base04: #5b6078; /*surface2*/
+	--base05: #cad3f5; /*text*/
+	--base06: #f4dbd6; /*rosewater*/
+	--base07: #b7bdf8; /*lavender*/
+	--base08: #ed8796; /*red*/
+	--base09: #f5a97f; /*peach*/
+	--base0A: #eed49f; /*yellow*/
+	--base0B: #a6da95; /*green*/
+	--base0C: #8bd5ca; /*teal*/
+	--base0D: #8aadf4; /*blue*/
+	--base0E: #c6a0f6; /*mauve*/
+	--base0F: #f0c6c6; /*flamingo*/
+	--base10: #1e2030; /*mantle - darker background*/
+	--base11: #181926; /*crust - darkest background*/
+	--base12: #ee99a0; /*maroon - bright red*/
+	--base13: #f4dbd6; /*rosewater - bright yellow*/
+	--base14: #a6da95; /*green - bright green*/
+	--base15: #91d7e3; /*sky - bright cyan*/
+	--base16: #7dc4e4; /*sapphire - bright blue*/
+	--base17: #f5bde6; /*pink - bright purple*/
+
+	--background: var(--base00);
+	--foreground: var(--base05);
+}
+
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-border: var(--base02);
+
+	--color-base00: var(--base00);
+	--color-base01: var(--base01);
+	--color-base02: var(--base02);
+	--color-base03: var(--base03);
+	--color-base04: var(--base04);
+	--color-base05: var(--base05);
+	--color-base06: var(--base06);
+	--color-base07: var(--base07);
+	--color-base08: var(--base08);
+	--color-base09: var(--base09);
+	--color-base0A: var(--base0A);
+	--color-base0B: var(--base0B);
+	--color-base0C: var(--base0C);
+	--color-base0D: var(--base0D);
+	--color-base0E: var(--base0E);
+	--color-base0F: var(--base0F);
+	--color-base10: var(--base10);
+	--color-base11: var(--base11);
+	--color-base12: var(--base12);
+	--color-base13: var(--base13);
+	--color-base14: var(--base14);
+	--color-base15: var(--base15);
+	--color-base16: var(--base16);
+	--color-base17: var(--base17);
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-gradient-to-br dark:from-slate-800 dark:to-background from-background to-slate-400 text-foreground antialiased transition-colors duration-300 ease-in-out scroll-smooth;
-  }
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background scroll-smooth antialiased transition-colors duration-300 ease-in-out;
+	}
 }
