@@ -78,7 +78,7 @@
 		<ul class="flex flex-row gap-4 opacity-75">
 			<li>
 				<a href="https://github.com/Kiliups" target="_blank" rel="noreferrer noopener">
-					<Button variant="outline" size="icon" class="text-2xl" title="github">
+					<Button variant="outline" size="icon" class="text-2xl" title="github" aria-label="GitHub">
 						<i class="fa fa-github"></i>
 					</Button>
 				</a>
@@ -89,28 +89,39 @@
 					target="_blank"
 					rel="noreferrer noopener"
 				>
-					<Button variant="outline" size="icon" class="text-xl" title="linkedin">
+					<Button
+						variant="outline"
+						size="icon"
+						class="text-xl"
+						title="linkedin"
+						aria-label="LinkedIn"
+					>
 						<i class="fa fa-linkedin"></i>
 					</Button>
 				</a>
 			</li>
 			<li>
 				<a href="mailto:mayer-kilian@gmx.de" target="_blank" rel="noreferrer noopener">
-					<Button variant="outline" size="icon" title="email">
-						<Mail class="size-5" />
+					<Button variant="outline" size="icon" title="email" aria-label="Email">
+						<Mail class="size-5" aria-hidden="true" />
 					</Button>
 				</a>
 			</li>
 			<li>
 				<a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-					<Button variant="outline" size="icon" title="curriculum vitae">
-						<ScrollText class="size-5" />
+					<Button
+						variant="outline"
+						size="icon"
+						title="curriculum vitae"
+						aria-label="Curriculum Vitae"
+					>
+						<ScrollText class="size-5" aria-hidden="true" />
 					</Button>
 				</a>
 			</li>
 		</ul>
 	</header>
-	<main class="flex flex-col gap-8 lg:mb-24 lg:w-[55%] lg:gap-24">
+	<section class="flex flex-col gap-8 lg:mb-24 lg:w-[55%] lg:gap-24" id="main-content">
 		<h2 class="pt-16 text-xl font-bold lg:hidden">{m.about()}</h2>
 		<section id="about" class="flex flex-col gap-4 lg:px-4 lg:pt-24">
 			<p>{m.about_section_1()}</p>
@@ -174,5 +185,5 @@
 			and
 			<a href="https://ui.shadcn.com/" class={footnoteLinkStyle}>Shadcn</a>.
 		</p>
-	</main>
+	</section>
 </div>
