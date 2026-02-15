@@ -99,7 +99,10 @@
 	* {
 		@apply border-border;
 	}
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
-		@apply bg-background scroll-smooth antialiased transition-colors duration-300 ease-in-out;
+		@apply bg-background antialiased transition-colors duration-300 ease-in-out;
 	}
 }
