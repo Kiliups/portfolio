@@ -14,7 +14,7 @@
 
 <a
 	class={`group grid grid-cols-3 ${link && 'cursor-pointer'} lg:hover:bg-base02/50 items-baseline gap-4 rounded border-none bg-transparent shadow-none lg:gap-8 lg:p-4 lg:hover:shadow-sm  ${className}`}
-	href={link}
+	href={link ? link : null}
 	target="_blank"
 	rel="noopener noreferrer"
 >

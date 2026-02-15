@@ -57,12 +57,6 @@
 							<li>
 								<a
 									href={'#' + section}
-									onclick={(e) => {
-										e.preventDefault();
-										document.getElementById(section)?.scrollIntoView({
-											behavior: 'smooth'
-										});
-									}}
 									class={`inline-block origin-left transform transition-transform hover:scale-125 hover:opacity-100 ${
 										activeSection === section ? 'scale-125 opacity-100' : 'opacity-50'
 									}`}
