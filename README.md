@@ -1,12 +1,26 @@
-# Kilian Mayer Portfolio
+# Kilian Mayer – Portfolio
 
-Personal portfolio in English and German, built with Astro and Tailwind CSS.
+A minimal, responsive developer portfolio built with SvelteKit. It showcases my experience, background, and links to external profiles. Inspired by [@Brittany Chiang](https://brittanychiang.com/).
 
-## Commands
+## Features
 
-| Command       | Action                    |
-| :------------ | :------------------------ |
-| `bun install` | Install dependencies      |
-| `bun dev`     | Start the development site |
-| `bun build`   | Build the production site |
-| `bun preview` | Preview the build         |
+- Smooth section scrolling with active section highlighting
+- Multilingual support using Paraglide
+- Styled with Tailwind CSS and shadcn/ui
+- Available in light and dark mode
+- Social links and contact info
+
+## Setup
+
+```bash
+git clone https://github.com/Kiliups/portfolio.git
+cd portfolio
+bun install
+bun run dev
+```
+
+## Contact
+
+- GitHub: [@Kiliups](https://github.com/Kiliups)
+- LinkedIn: [Kilian Mayer](https://www.linkedin.com/in/kilian-johannes-mayer)
+- Email: [mayer-kilian@gmx.de](mailto:mayer-kilian@gmx.de)
