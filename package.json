@@ -45,7 +45,7 @@
 		"brace-expansion": ">=1.1.12",
 		"flatted": ">=3.4.0",
 		"picomatch": ">=4.0.4",
-		"cookie": ">=0.7.0"
+		"cookie": "0.7.2"
 	},
 	"dependencies": {
 		"@inlang/paraglide-js": "^2.15.3",
