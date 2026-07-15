@@ -1,0 +1,74 @@
+---
+import HomeLayout from "@/layouts/HomeLayout.astro";
+
+const experienceEntries = [
+  {
+    title: "Working Student Software Engineering",
+    date: "MAR 2026 — PRESENT",
+    organization: "CHECK24",
+    link: "https://www.check24.de/unternehmen/",
+    description:
+      "Features for hospital, nursing care, and alternative practitioner insurance products with Angular and PHP.",
+    badges: ["TypeScript", "Angular", "PHP"],
+  },
+  {
+    title: "Working Student Software Engineering",
+    date: "OCT 2025 — FEB 2026",
+    organization: "iteratec",
+    link: "https://www.iteratec.com/",
+    description:
+      "Worked on an internal React and Spring Boot dashboard. Built UI components, multi-step forms, and managed state. Improved quality through usability tests and code reviews. Maintained CI/CD on AWS.",
+    badges: ["React", "Spring Boot", "AWS", "GitLab CI/CD"],
+  },
+  {
+    title: "Bachelor Thesis",
+    date: "NOV 2024 — FEB 2025",
+    organization: "OTH Regensburg / itestra",
+    description:
+      "Built an LLM workflow to extract software requirements from documents. Evaluated zero-shot and few-shot approaches with Python, LangChain, and Llama 3.3. Grade: 1.0.",
+    badges: ["Python", "LangChain", "Llama 3.3"],
+  },
+  {
+    title: "Intern & Working Student",
+    date: "SEP 2023 — FEB 2025",
+    organization: "itestra",
+    link: "https://www.itestra.de/",
+    description:
+      "Developed investment fund master data software from UX to backend using React, Next.js, Java Spring Boot, and PostgreSQL. Designed the database schema, set up a Jenkins pipeline, and coordinated requirements directly with the client. Subsequently worked as a working student, modernizing a life insurance platform, migrating C code to Java, and expanding test coverage.",
+    badges: ["React", "Next.js", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "C", "CI/CD"],
+  },
+];
+
+const educationEntries = [
+  {
+    title: "M.Sc. Computer Science",
+    date: "OCT 2025 — PRESENT",
+    organization: "HAW Hamburg",
+    link: "https://www.haw-hamburg.de/",
+    description: "Current grade average: 1.1.",
+  },
+  {
+    title: "B.Sc. Computer Science",
+    date: "OCT 2021 — SEP 2025",
+    organization: "OTH Regensburg",
+    link: "https://www.oth-regensburg.de/studiengang/informatik-studieren-bachelor",
+    description: "Final grade: 2.1.",
+  },
+];
+---
+
+<HomeLayout
+  subtitle="Software Engineer"
+  currentStatus="Working Student at CHECK24 · M.Sc. Computer Science at HAW Hamburg"
+  aboutTitle="About"
+  aboutParagraphs={[
+    "Hi, I'm Kilian. I'm pursuing a master's degree in computer science in Hamburg and work as a software engineer at CHECK24.",
+    "I'm interested in how an application works as a whole, from the frontend through the backend to the database. At CHECK24, I develop software with Angular, TypeScript, and PHP. Previously, I worked with React and Spring Boot, designed database schemas, and built CI/CD pipelines.",
+    "In my master's, I focus on autonomous and intelligent systems. Outside university, I tinker with my <a class=\"font-medium text-base07 underline underline-offset-4 hover:text-base0E\" href=\"https://github.com/Kiliups/nixos\" target=\"_blank\" rel=\"noreferrer noopener\">NixOS setup</a> and home server.",
+    "When I do manage to step away from my computer, you'll find me at concerts, on the football pitch, or on the ski slopes.",
+  ]}
+  experienceTitle="Experience"
+  experienceEntries={experienceEntries}
+  educationTitle="Education"
+  educationEntries={educationEntries}
+/>

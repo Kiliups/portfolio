@@ -9,8 +9,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://kilian-mayer.de",
   i18n: {
-    locales: ["en", "de"],
-    defaultLocale: "en",
+    locales: ["de", "en"],
+    defaultLocale: "de",
+  },
+  redirects: {
+    "/de": "/",
   },
   vite: {
     plugins: [tailwindcss()],
