@@ -1,0 +1,82 @@
+---
+import HomeLayout from "@/layouts/HomeLayout.astro";
+
+const experienceEntries = [
+  {
+    title: "Werkstudent Softwareentwicklung",
+    date: "MRZ 2026 — HEUTE",
+    organization: "Check24",
+    description:
+      "Entwicklung von Full-Stack-Features für die Check24-Vergleiche für Krankenhaus-, Pflege- und Heilpraktikerzusatzversicherungen im Angular-Frontend und PHP-Backend.",
+    badges: ["TypeScript", "Angular", "PHP"],
+  },
+  {
+    title: "Werkstudent Softwareentwicklung",
+    date: "OKT 2025 — FEB 2026",
+    organization: "iteratec",
+    description:
+      "Modernisierung eines internen Dashboards mit React und Spring Boot. Entwicklung wiederverwendbarer UI-Komponenten, eines mehrstufigen Formulars und komplexer Anwendungszustände. Verbesserung der Qualität durch Usability-Tests, Bugfixes und Code-Reviews sowie Betreuung der CI/CD-Pipelines auf AWS.",
+    badges: ["React", "Spring Boot", "AWS", "GitLab CI/CD"],
+  },
+  {
+    title: "Bachelorarbeit",
+    date: "NOV 2024 — FEB 2025",
+    organization: "OTH Regensburg / itestra",
+    description:
+      "Entwicklung eines LLM-Workflows zur Extraktion von Softwareanforderungen aus unstrukturierten Dokumenten. Evaluation von Zero-Shot- und Few-Shot-Ansätzen mit Python, Pandas, LangChain und Llama 3.3. Die Arbeit wurde mit 1,0 bewertet.",
+    badges: ["Python", "LangChain", "Llama 3.3"],
+  },
+  {
+    title: "Werkstudent Softwareentwicklung",
+    date: "FEB 2024 — FEB 2025",
+    organization: "itestra",
+    link: "https://www.itestra.de/",
+    description:
+      "Modernisierung einer Lebensversicherungsplattform durch Migration und Debugging von Geschäftslogik aus C nach Java. Entwicklung von Features mit React und Spring Boot, Entwurf von Datenbankschemata, Ausbau der Unit- und Integrationstests und Verbesserung der Deployment-Pipeline.",
+    badges: ["React", "Next.js", "Java", "Spring Boot", "C", "CI/CD"],
+  },
+  {
+    title: "Praktikum Softwareentwicklung",
+    date: "SEP 2023 — JAN 2024",
+    organization: "itestra",
+    link: "https://www.itestra.de/",
+    description:
+      "Entwicklung einer revisionssicheren Software für Fondsstammdaten von UX und Datenbankdesign bis zu Frontend und Backend. Direkte Abstimmung der Anforderungen mit dem Kunden und Einrichtung der automatisierten Auslieferung mit Jenkins.",
+    badges: ["Next.js", "TypeScript", "Java", "Spring Boot", "PostgreSQL"],
+  },
+];
+
+const educationEntries = [
+  {
+    title: "Informatik M.Sc.",
+    date: "OKT 2025 — HEUTE",
+    organization: "HAW Hamburg",
+    link: "https://www.haw-hamburg.de/",
+    description: "Aktueller Notendurchschnitt: 1,1.",
+  },
+  {
+    title: "Informatik B.Sc.",
+    date: "OKT 2021 — SEP 2025",
+    organization: "OTH Regensburg",
+    link: "https://www.oth-regensburg.de/studiengang/informatik-studieren-bachelor",
+    description: "Abschlussnote: 2,1.",
+  },
+];
+---
+
+<HomeLayout
+  subtitle="Full-Stack-Softwareentwickler und Informatikstudent"
+  currentStatus="Werkstudent bei Check24 · Informatik M.Sc. an der HAW Hamburg"
+  description="Ich baue Webanwendungen von Frontend bis Backend — vom ersten Commit bis zur Produktion."
+  aboutTitle="Über mich"
+  aboutParagraphs={[
+    "Hi, ich bin Kilian. Ich bin Softwareentwickler und Informatik-Masterstudent in Hamburg. Ich verstehe Dinge gern als Ganzes — egal ob das ein kompletter Anwendungs-Stack ist oder warum mein NixOS-Build gerade wieder fehlschlägt.",
+    "Bei Check24 entwickle ich aktuell Full-Stack-Features mit Angular, TypeScript und PHP. Davor habe ich mit React und Spring Boot gearbeitet, Datenbanken entworfen, CI/CD-Pipelines aufgesetzt und geholfen, alte Versicherungssoftware zu modernisieren. Am liebsten bin ich dort, wo technische Entscheidungen auf echte Nutzerbedürfnisse treffen.",
+    "Parallel dazu studiere ich Autonome und Intelligente Systeme an der HAW Hamburg — im Grunde bringe ich Maschinen bei, Entscheidungen zu treffen, ohne allzu viel Chaos anzurichten.",
+    "Wenn ich mich von der Tastatur losreiße, bin ich meist auf einem Konzert, dem Fußballplatz oder beim Skifahren unterwegs. Daneben betreue ich mein <a class=\"font-medium text-base07 underline underline-offset-4 hover:text-base0E\" href=\"https://github.com/Kiliups/nixos\" target=\"_blank\" rel=\"noreferrer noopener\">NixOS-Setup</a> und meinen Homeserver, weil ich anscheinend nicht aufhören kann, an Computern herumzubasteln.",
+  ]}
+  experienceTitle="Erfahrung"
+  experienceEntries={experienceEntries}
+  educationTitle="Ausbildung"
+  educationEntries={educationEntries}
+/>

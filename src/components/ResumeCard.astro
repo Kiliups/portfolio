@@ -1,0 +1,64 @@
+---
+import { ChevronsUp } from "lucide-astro";
+
+interface Props {
+  title: string;
+  date: string;
+  organization: string;
+  description?: string | null;
+  link?: string | null;
+  badges?: string[];
+  class?: string | null;
+}
+
+const {
+  title,
+  date,
+  organization,
+  description = null,
+  link = null,
+  badges = [],
+  class: className = null,
+} = Astro.props;
+const baseClass =
+  `group relative grid gap-2 rounded-md border-none bg-transparent shadow-none sm:grid-cols-[9rem_minmax(0,1fr)] sm:gap-6 lg:gap-8 lg:p-4 ${link ? "lg:hover:bg-base02/50 lg:hover:shadow-sm" : ""} ${className ?? ""}`.trim();
+---
+
+<article class={baseClass}>
+  <header>
+    <p class="text-sm opacity-50">{date}</p>
+  </header>
+  <div class="flex min-w-0 flex-col gap-1.5 break-words">
+    <div class="flex flex-row items-center gap-2 font-bold">
+      {
+        link ? (
+          <h3 class="w-full">
+            <a href={link} target="_blank" rel="noopener noreferrer" class="after:absolute after:inset-0">
+              {title}
+            </a>
+          </h3>
+        ) : (
+          <h3 class="w-full">{title}</h3>
+        )
+      }
+      {
+        link && (
+          <ChevronsUp class="text-base07 rotate-45 opacity-0 transition-opacity group-hover:opacity-100" />
+        )
+      }
+    </div>
+    <p class="opacity-75">{organization}</p>
+    {description && <p class="text-sm leading-relaxed opacity-75">{description}</p>}
+    {
+      badges.length > 0 && (
+        <div class="flex flex-row flex-wrap gap-2 pt-1">
+          {badges.map((badge) => (
+            <span class="bg-base07/75 text-base00 rounded-md px-3 py-1 text-xs font-semibold">
+              {badge}
+            </span>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</article>

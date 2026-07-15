@@ -1,0 +1,311 @@
+---
+import ResumeCard from "@/components/ResumeCard.astro";
+import { ModeToggle } from "@/components/ModeToggle";
+import { ButtonLink } from "@/components/ui/button";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Github from "lucide-astro/Github";
+import Linkedin from "lucide-astro/Linkedin";
+import Mail from "lucide-astro/Mail";
+import ScrollText from "lucide-astro/ScrollText";
+import "../styles/global.css";
+
+interface ResumeEntry {
+  title: string;
+  date: string;
+  organization: string;
+  description?: string;
+  link?: string;
+  badges?: string[];
+}
+
+interface Props {
+  subtitle: string;
+  currentStatus: string;
+  description: string;
+  aboutTitle: string;
+  aboutParagraphs: string[];
+  experienceTitle: string;
+  experienceEntries: ResumeEntry[];
+  educationTitle: string;
+  educationEntries: ResumeEntry[];
+}
+
+const {
+  subtitle,
+  currentStatus,
+  description,
+  aboutTitle,
+  aboutParagraphs,
+  experienceTitle,
+  experienceEntries,
+  educationTitle,
+  educationEntries,
+} = Astro.props;
+
+const isGerman = Astro.currentLocale === "de";
+const languageUrl = getRelativeLocaleUrl(isGerman ? "en" : "de");
+const pageTitle = isGerman
+  ? "Kilian Mayer · Full-Stack Softwareentwickler"
+  : "Kilian Mayer · Full-Stack Software Engineer";
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const labels = isGerman
+  ? {
+      language: "View this page in English",
+      cv: "Lebenslauf öffnen",
+      email: "E-Mail schreiben",
+      footer: "Erstellt mit",
+      theme: "Farbschema wechseln",
+      settings: "Seiteneinstellungen",
+      skipToContent: "Zum Hauptinhalt springen",
+    }
+  : {
+      language: "Diese Seite auf Deutsch anzeigen",
+      cv: "Open résumé",
+      email: "Send an email",
+      footer: "Built with",
+      theme: "Toggle color theme",
+      settings: "Page settings",
+      skipToContent: "Skip to main content",
+    };
+
+const navItems = [
+  { id: "about", label: aboutTitle },
+  { id: "experience", label: experienceTitle },
+  { id: "education", label: educationTitle },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kilian Mayer",
+  jobTitle: "Full-Stack Software Engineer",
+  email: "mailto:mayer-kilian@gmx.de",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Hamburg",
+    addressCountry: "Germany",
+  },
+  alumniOf: educationEntries.map((e) => ({
+    "@type": "CollegeOrUniversity",
+    name: e.organization,
+  })),
+  knowsAbout: [...new Set(experienceEntries.flatMap((entry) => entry.badges ?? []))],
+  sameAs: [
+    "https://github.com/Kiliups",
+    "https://www.linkedin.com/in/kilian-johannes-mayer",
+  ],
+};
+const year = new Date().getFullYear();
+---
+
+<html lang={Astro.currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={isGerman ? "#24273a" : "#eff1f5"} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("/me-wide.png", Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL("/me-wide.png", Astro.site)} />
+    <link rel="alternate" hreflang="en" href={getRelativeLocaleUrl("en")} />
+    <link rel="alternate" hreflang="de" href={getRelativeLocaleUrl("de")} />
+    <link rel="alternate" hreflang="x-default" href={getRelativeLocaleUrl("en")} />
+    <title>{pageTitle}</title>
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+    />
+    <script is:inline>
+      const theme = localStorage.getItem("theme") ??
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    </script>
+  </head>
+  <body
+    class="lg:flex lg:justify-between lg:gap-4 bg-background transition-colors duration-300 ease-in-out text-foreground mx-auto min-h-screen max-w-screen-xl scroll-smooth px-5 py-10 font-sans antialiased sm:px-6 sm:py-12 md:px-12 md:py-16 lg:py-0"
+  >
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-background focus:px-4 focus:py-2 focus:shadow-lg"
+    >
+      {labels.skipToContent}
+    </a>
+    <div
+      class="no-print absolute top-4 right-4 z-20 flex items-center gap-1.5 md:fixed md:top-6 md:right-6"
+      aria-label={labels.settings}
+    >
+      <ButtonLink
+        variant="outline"
+        size="icon"
+        href={languageUrl}
+        lang={isGerman ? "en" : "de"}
+        hreflang={isGerman ? "en" : "de"}
+        aria-label={labels.language}
+      >
+        {isGerman ? "EN" : "DE"}
+      </ButtonLink>
+      <ModeToggle client:load label={labels.theme} />
+    </div>
+    <header
+      class="mb-16 flex flex-col gap-4 lg:sticky lg:top-0 lg:mb-0 lg:h-screen lg:w-[45%] lg:justify-between lg:py-24"
+    >
+      <div class="flex flex-col gap-4">
+        <div class="relative mb-4 inline-block w-36 sm:mb-6 sm:w-44">
+          <div
+            class="bg-base02 absolute inset-0 translate-x-4 translate-y-4 transform backdrop-blur-md"
+          >
+          </div>
+          <div class="relative z-10 shadow-xl">
+            <img
+              src="/me-wide.png"
+              alt="Kilian Mayer"
+              width="1162"
+              height="1162"
+              fetchpriority="high"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+        <h1 class="text-3xl font-bold md:text-5xl">Kilian Mayer</h1>
+        <p class="text-lg md:text-xl">{subtitle}</p>
+        <p class="text-sm font-medium opacity-75">{currentStatus}</p>
+        <p class="max-w-md leading-relaxed opacity-75">{description}</p>
+        <nav class="no-print hidden lg:mt-4 lg:block">
+          <ul class="flex flex-wrap gap-x-4 gap-y-2 lg:flex-col lg:gap-4">
+            {
+              navItems.map((item) => (
+                <li>
+                  <a
+                    href={"#" + item.id}
+                    data-nav={item.id}
+                    class="nav-link inline-block origin-left text-sm transition-[color,opacity,transform] duration-150 ease-out hover:text-base07 hover:opacity-100"
+                  >
+                    — {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+      <ul class="no-print flex flex-row flex-wrap gap-3 opacity-90 lg:opacity-75">
+        <li>
+          <ButtonLink
+            variant="outline"
+            size="icon"
+            href="https://github.com/Kiliups"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="GitHub"
+          >
+            <Github class="size-5" aria-hidden="true" />
+          </ButtonLink>
+        </li>
+        <li>
+          <ButtonLink
+            variant="outline"
+            size="icon"
+            href="https://www.linkedin.com/in/kilian-johannes-mayer"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="LinkedIn"
+          >
+            <Linkedin class="size-5" aria-hidden="true" />
+          </ButtonLink>
+        </li>
+        <li>
+          <ButtonLink
+            variant="outline"
+            size="icon"
+            href="mailto:mayer-kilian@gmx.de"
+            aria-label={labels.email}
+          >
+            <Mail class="size-5" aria-hidden="true" />
+          </ButtonLink>
+        </li>
+        <li>
+          <ButtonLink
+            variant="outline"
+            size="icon"
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={labels.cv}
+          >
+            <ScrollText class="size-5" aria-hidden="true" />
+          </ButtonLink>
+        </li>
+      </ul>
+    </header>
+    <main
+      class="flex flex-col gap-16 lg:mb-24 lg:w-[55%] lg:gap-24"
+      id="main-content"
+    >
+      <section id="about" class="flex flex-col gap-5 lg:px-4 lg:pt-24 scroll-mt-24">
+        <h2 class="text-xl font-bold">{aboutTitle}</h2>
+        {aboutParagraphs.map((paragraph) => <p class="leading-relaxed opacity-90" set:html={paragraph} />)}
+      </section>
+
+      <section id="experience" class="flex flex-col gap-8 scroll-mt-24 lg:gap-5">
+        <h2 class="text-xl font-bold lg:px-4">{experienceTitle}</h2>
+        {experienceEntries.map((entry) => <ResumeCard {...entry} />)}
+      </section>
+
+      <section id="education" class="flex flex-col gap-8 scroll-mt-24 lg:gap-5">
+        <h2 class="text-xl font-bold lg:px-4">{educationTitle}</h2>
+        {educationEntries.map((entry) => <ResumeCard {...entry} />)}
+      </section>
+
+      <footer class="text-foreground/50 flex flex-col gap-1 text-sm">
+        <p>
+          {labels.footer + " "}
+          <a class="font-medium text-base07 underline underline-offset-4 hover:text-base0E" href="https://astro.build">Astro</a>
+          {isGerman ? " und " : " and "}
+          <a class="font-medium text-base07 underline underline-offset-4 hover:text-base0E" href="https://tailwindcss.com">Tailwind CSS</a>.
+        </p>
+        <p>&copy; {year} Kilian Mayer</p>
+      </footer>
+    </main>
+    <script is:inline>
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const updateActiveSection = () => {
+        let active = sections[0];
+        let highestVisibility = 0;
+
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          const visibleHeight = Math.max(
+            0,
+            Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0),
+          );
+          const visibility = visibleHeight / Math.min(rect.height, window.innerHeight);
+          if (visibility > highestVisibility) {
+            active = section;
+            highestVisibility = visibility;
+          }
+        });
+
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("data-nav") === active.id;
+          link.classList.toggle("nav-active", isActive);
+          if (isActive) link.setAttribute("aria-current", "true");
+          else link.removeAttribute("aria-current");
+        });
+      };
+
+      document.addEventListener("scroll", updateActiveSection, { passive: true });
+      updateActiveSection();
+    </script>
+  </body>
+</html>

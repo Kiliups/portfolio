@@ -1,11 +1,82 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import HomeLayout from "@/layouts/HomeLayout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const experienceEntries = [
+  {
+    title: "Working Student Software Engineering",
+    date: "MAR 2026 — PRESENT",
+    organization: "Check24",
+    description:
+      "Build full-stack features for Check24's hospital, nursing care, and alternative practitioner insurance products, working across the Angular frontend and PHP backend.",
+    badges: ["TypeScript", "Angular", "PHP"],
+  },
+  {
+    title: "Working Student Software Engineering",
+    date: "OCT 2025 — FEB 2026",
+    organization: "iteratec",
+    description:
+      "Modernized an internal React and Spring Boot dashboard. Built reusable UI components and a multi-step form, managed complex application state, and improved quality through usability tests, bug fixes, and code reviews. Also maintained CI/CD on AWS.",
+    badges: ["React", "Spring Boot", "AWS", "GitLab CI/CD"],
+  },
+  {
+    title: "Bachelor Thesis",
+    date: "NOV 2024 — FEB 2025",
+    organization: "OTH Regensburg / itestra",
+    description:
+      "Built an LLM workflow that extracts software requirements from unstructured documents. Evaluated zero-shot and few-shot approaches with Python, Pandas, LangChain, and Llama 3.3. The thesis received a grade of 1.0.",
+    badges: ["Python", "LangChain", "Llama 3.3"],
+  },
+  {
+    title: "Working Student Software Engineering",
+    date: "FEB 2024 — FEB 2025",
+    organization: "itestra",
+    link: "https://www.itestra.de/",
+    description:
+      "Modernized a life insurance platform by migrating and debugging business logic from C to Java. Built React and Spring Boot features, designed database schemas, added unit and integration tests, and improved the deployment pipeline.",
+    badges: ["React", "Next.js", "Java", "Spring Boot", "C", "CI/CD"],
+  },
+  {
+    title: "Software Engineering Intern",
+    date: "SEP 2023 — JAN 2024",
+    organization: "itestra",
+    link: "https://www.itestra.de/",
+    description:
+      "Built an audit-ready fund master data system from UX and database design to frontend and backend. Worked directly with the customer on requirements and set up automated delivery with Jenkins.",
+    badges: ["Next.js", "TypeScript", "Java", "Spring Boot", "PostgreSQL"],
+  },
+];
+
+const educationEntries = [
+  {
+    title: "M.Sc. Computer Science",
+    date: "OCT 2025 — PRESENT",
+    organization: "HAW Hamburg",
+    link: "https://www.haw-hamburg.de/",
+    description: "Current grade average: 1.1.",
+  },
+  {
+    title: "B.Sc. Computer Science",
+    date: "OCT 2021 — SEP 2025",
+    organization: "OTH Regensburg",
+    link: "https://www.oth-regensburg.de/studiengang/informatik-studieren-bachelor",
+    description: "Final grade: 2.1.",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<HomeLayout
+  subtitle="Full-stack software engineer and computer science student"
+  currentStatus="Working Student at Check24 · M.Sc. Computer Science at HAW Hamburg"
+  description="I build web applications end to end — from the interface to the database, from first commit to production."
+  aboutTitle="About"
+  aboutParagraphs={[
+    "Hi, I'm Kilian. I'm a software engineer and computer science master's student in Hamburg. I like understanding how things connect — whether that's a full application stack or why my NixOS build just failed.",
+    "At Check24, I ship full-stack features with Angular, TypeScript, and PHP. Before that, I've worked with React and Spring Boot, designed databases, set up CI/CD pipelines, and helped modernize legacy insurance software. I enjoy the space where technical decisions meet real user needs.",
+    "In parallel, I'm studying autonomous and intelligent systems at HAW Hamburg — essentially teaching machines to make decisions without causing too much chaos.",
+    "When I step away from the keyboard, I'm usually at a concert, on a football pitch, or trying not to fall over on skis. I also maintain my <a class=\"font-medium text-base07 underline underline-offset-4 hover:text-base0E\" href=\"https://github.com/Kiliups/nixos\" target=\"_blank\" rel=\"noreferrer noopener\">NixOS setup</a> and homeserver, because I apparently can't stop tinkering with computers.",
+  ]}
+  experienceTitle="Experience"
+  experienceEntries={experienceEntries}
+  educationTitle="Education"
+  educationEntries={educationEntries}
+/>

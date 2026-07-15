@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Catppuccin Latte */
+  --base00: #eff1f5; /* base */
+  --base01: #e6e9ef; /* mantle*/
+  --base02: #ccd0da; /* surface0*/
+  --base03: #bcc0cc; /* surface1*/
+  --base04: #acb0be; /* surface2*/
+  --base05: #4c4f69; /* text */
+  --base06: #dc8a78; /* rosewater */
+  --base07: #7287fd; /* lavender*/
+  --base08: #d20f39; /* red */
+  --base09: #fe640b; /* peach*/
+  --base0A: #df8e1d; /* yellow */
+  --base0B: #40a02b; /* green */
+  --base0C: #179299; /* teal */
+  --base0D: #1e66f5; /* blue */
+  --base0E: #8839ef; /* mauve */
+  --base0F: #dd7878; /* flamingo */
+  --background: var(--base00);
+  --foreground: var(--base05);
+  --radius: 0.75rem;
+}
+.dark {
+  /* Catppuccin Macchiato */
+  --base00: #24273a; /*base*/
+  --base01: #1e2030; /*mantle*/
+  --base02: #363a4f; /*surface0*/
+  --base03: #494d64; /*surface1*/
+  --base04: #5b6078; /*surface2*/
+  --base05: #cad3f5; /*text*/
+  --base06: #f4dbd6; /*rosewater*/
+  --base07: #b7bdf8; /*lavender*/
+  --base08: #ed8796; /*red*/
+  --base09: #f5a97f; /*peach*/
+  --base0A: #eed49f; /*yellow*/
+  --base0B: #a6da95; /*green*/
+  --base0C: #8bd5ca; /*teal*/
+  --base0D: #8aadf4; /*blue*/
+  --base0E: #c6a0f6; /*mauve*/
+  --base0F: #f0c6c6; /*flamingo*/
+  --background: var(--base00);
+  --foreground: var(--base05);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--base02);
+
+  --color-base00: var(--base00);
+  --color-base01: var(--base01);
+  --color-base02: var(--base02);
+  --color-base03: var(--base03);
+  --color-base04: var(--base04);
+  --color-base05: var(--base05);
+  --color-base06: var(--base06);
+  --color-base07: var(--base07);
+  --color-base08: var(--base08);
+  --color-base09: var(--base09);
+  --color-base0A: var(--base0A);
+  --color-base0B: var(--base0B);
+  --color-base0C: var(--base0C);
+  --color-base0D: var(--base0D);
+  --color-base0E: var(--base0E);
+  --color-base0F: var(--base0F);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  .nav-link {
+    opacity: 0.5;
+  }
+  .nav-link.nav-active {
+    opacity: 1;
+    color: var(--base07);
+    transform: scale(1.25);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    max-width: 100% !important;
+    padding: 1rem !important;
+  }
+  header {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  main {
+    width: 100% !important;
+  }
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
