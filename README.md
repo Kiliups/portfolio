@@ -1,6 +1,6 @@
 # Kilian Mayer – Portfolio
 
-A minimal, responsive developer portfolio built with SvelteKit. It showcases my experience, background, and links to external profiles. Inspired by [@Brittany Chiang](https://brittanychiang.com/).
+A minimal, responsive developer portfolio built with Astro. It showcases my experience, background, and links to external profiles. Inspired by [@Brittany Chiang](https://brittanychiang.com/).
 
 ## Features
 
